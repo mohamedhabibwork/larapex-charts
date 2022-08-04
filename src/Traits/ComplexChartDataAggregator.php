@@ -6,7 +6,7 @@ trait ComplexChartDataAggregator
 {
     public function addData(string $name, array $data) :self
     {
-        $this->dataset = json_decode($this->dataset);
+        $this->dataset = json_decode($this->dataset  ?? '{}');
 
         $this->dataset[] = [
             'name' => $name,
